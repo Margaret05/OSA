@@ -1,0 +1,8 @@
+﻿  OSAlab2.cpp
+C:\Users\38068\source\repos\OSAlab2\OSAlab2.cpp(10,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\38068\source\repos\OSAlab2\OSAlab2.cpp(14,17): warning C4566: character represented by universal-character-name '\u200B' cannot be represented in the current code page (1252)
+  Task1.cpp
+  Task2.cpp
+  Task3.cpp
+  Generating Code...
+  OSAlab2.vcxproj -> C:\Users\38068\source\repos\OSAlab2\x64\Debug\OSAlab2.exe
