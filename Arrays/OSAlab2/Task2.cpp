@@ -3,7 +3,7 @@
 void Task2()
 {
     int rows = 5, cols = 5, first_row = 2, second_row = 4;
-    rows = getValidSize("Enter size (1-10) for the rows of matrix: ");
+    rows = getValidSize("\nEnter size (1-10) for the rows of matrix: ");
     cols = getValidSize("Enter size (1-10) for the collumns of matrix: ");
 
     // Оголошуємо і ініціалізуємо матрицю
@@ -14,14 +14,14 @@ void Task2()
     // створення матриці
     CreateMatrix(rows, cols, Matrix);
     // Виводимо початкову матрицю
-    cout << "Initial matrix:" << endl;
+    cout << "\nInitial matrix:" << endl;
     OutputMatrix(rows, cols, Matrix);
 
     // ввід коректного рядка в діапазоні від 1 до введеної кількості рядків
-    first_row = getValidRow("\n\nEnter the line number (1-10) you want to replace: ", rows);
+    first_row = getValidRow("\nEnter the row number (1-10) you want to replace: ", rows);
     second_row = getValidRow("And another: ", rows);
     while (second_row == first_row) {
-        second_row = getValidRow("We cannot swap one and the same row. Enter another one again: ", rows);
+        second_row = getValidRow("\nWe cannot swap one and the same row. Enter another one again: ", rows);
     }
 
     // Обмінюємо обрані рядки
@@ -70,13 +70,13 @@ int getValidRow(const string& prompt, int rows) {
 
         // Перевірка на некоректне введення (не число)
         if (!cin) {
-            cout << "Incorrect input. Please enter a number between 1 and " << rows << endl;
+            cout << "\n\nIncorrect input. Please enter a number between 1 and " << rows << endl;
             cin.clear(); // Очищаємо стан потоку вводу
             cin.ignore();
         }
         // Перевірка, чи входить число в допустимий діапазон
         else if (row < 1 || row > rows) {
-            cout << "Input must be between 1 and " << rows << ".Please enter a valid number.\n";
+            cout << "\n\nInput must be between 1 and " << rows << ".Please enter a valid number.\n";
         }
         else {
             return row; // Повертаємо коректне значення

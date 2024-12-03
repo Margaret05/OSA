@@ -19,11 +19,19 @@ int main() {
         switch (choice) {
         case 1:
             Task1();
+            break;
         case 2:
             Task2();
+            break;
         case 3:
             Task3();
-        default: cout << "Error\n\n";
+            break;
+        case 0: 
+            cout << "\nExiting program\n";
+            break;
+        default: 
+            cout << "\nError\n\n"; 
+            break;
         }
     } while (choice != 0);
     return 0;

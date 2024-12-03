@@ -8,7 +8,7 @@ void Task1()
     int* array3 = new int[size3];
 
     // Введення коректних розмірів для трьох масивів
-    size1 = getValidSize("Enter size (1-10) for first array: ");
+    size1 = getValidSize("\nEnter size (1-10) for first array: ");
     size2 = getValidSize("Enter size (1-10) for second array: ");
     size3 = getValidSize("Enter size (1-10) for third array: ");
 
@@ -17,7 +17,7 @@ void Task1()
     CreateArray(size2, array2);
     CreateArray(size3, array3);
 
-    cout << "Array 1:\n";
+    cout << "\nArray 1:\n";
     OutputArray(size1, array1);
 
     cout << "\nArray 2:\n";
@@ -42,13 +42,13 @@ int getValidSize(const string& prompt) {
 
         // Перевірка на некоректне введення (не число)
         if (!cin) {
-            cout << "Incorrect input. Please enter a number between 1 and 10.\n";
+            cout << "\nIncorrect input. Please enter a number between 1 and 10.\n";
             cin.clear(); // Очищаємо стан потоку вводу
             cin.ignore();
         }
         // Перевірка, чи входить число в допустимий діапазон
         else if (size < 1 || size > 10) {
-            cout << "Input must be between 1 and 10. Please enter a valid number.\n";
+            cout << "\nInput must be between 1 and 10. Please enter a valid number.\n";
         }
         else {
             return size; // Повертаємо коректне значення
@@ -71,9 +71,10 @@ void OutputArray(int size, int* array)
     {
         cout << array[i] << " ";
     }
+    cout << endl;
 }
 
-// Функція для знаходження об'єднання двох масивів
+// Функція для знаходження об'єднання  масивів
 void findUnion(int arr1[], int size1, int arr2[], int size2, int arr3[], int size3) {
     int result[100]; // Масив для збереження об'єднання
     int resultSize = 0;
@@ -100,14 +101,12 @@ void findUnion(int arr1[], int size1, int arr2[], int size2, int arr3[], int siz
     }
 
     // вивід результату
-    cout << "\n\nThe union of arrays: ";
-    for (int i = 0; i < resultSize; ++i) {
-        cout << result[i] << " ";
-    }
+    cout << "\nThe union of arrays: ";
+    OutputArray(resultSize, result);
     cout << endl;
 }
 
-// Функція для знаходження перетину двох масивів
+// Функція для знаходження перетину  масивів
 void findIntersection(int arr1[], int size1, int arr2[], int size2, int arr3[], int size3) {
     int result[100]; // Масив для збереження перетину
     int resultSize = 0;
@@ -132,14 +131,12 @@ void findIntersection(int arr1[], int size1, int arr2[], int size2, int arr3[], 
     }
 
     // вивід результату
-    cout << "\nIntersect of arrays: ";
+    cout << "Intersect of arrays: ";
     if (resultSize == 0) {
-        cout << "The intersect of all three arrays wasn`t found.";
+        cout << "The intersect of all three arrays wasn`t found.\n";
     }
     else {
-        for (int i = 0; i < resultSize; ++i) {
-            cout << result[i] << " ";
-        }
+        OutputArray(resultSize, result);
     }
     cout << endl;
 }

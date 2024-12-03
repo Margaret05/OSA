@@ -1,4 +1,5 @@
 ﻿#include "Header.h"
+#include "Arrays.h"
 
 void Task3()
 {
@@ -8,19 +9,16 @@ void Task3()
     string inputFilename;       //input.txt
     string encodedFilename = "encoded.txt";
     string decodedFilename = "decoded.txt";
-
-    cout << "Enter filename to read: "; cin >> inputFilename;
-    cout << "Enter number of bits to shift: "; cin >> m;
-    if (!cin) {
-        cout << "Incorrect input. Please enter a number: "; cin >> m;
-    }
+    bool retFlag;
+    
     // Кодуємо текстовий файл
-    encodeFile(inputFilename, encodedFilename, m);
+    encodeFile(inputFilename, m, encodedFilename, retFlag);
+    if (retFlag) return;
 
     // Декодуємо текстовий файл
     decodeFile(encodedFilename, decodedFilename, m);
 
-    cout << "Encoding and decoding complete.\n" << endl;
+    cout << "Encoding saved in encoded.txt file and decoding saved in decoded.txt file.\n" << endl;
 }
 
 //char encoding(char s) {
@@ -82,16 +80,24 @@ char encode(char s, int m) {
 }
 
 // Функція для кодування вмісту текстового файлу
-void encodeFile(const string& inputFilename, const string& outputFilename, int m) {
+void encodeFile(string& inputFilename, int& m, string& encodedFilename, bool& retFlag)
+{
+    retFlag = true;
+    cout << "\nEnter filename to read: "; cin >> inputFilename;
     ifstream infile(inputFilename, ios::in); // Відкриваємо вхідний файл для читання
     if (!infile) {
-        cerr << "Could not open file for reading!" << endl;
+        cerr << "\nCould not open file for reading!\n\n";
         return;
     }
+    cout << "Enter number of bits to shift: "; cin >> m;
+    if (!cin) {
+        cout << "\nIncorrect input. Please enter a number: "; cin >> m;
+    }
+    
 
-    ofstream outfile(outputFilename, ios::out); // Відкриваємо вихідний файл для запису
+    ofstream outfile(encodedFilename, ios::out); // Відкриваємо вихідний файл для запису
     if (!outfile) {
-        cerr << "Could not open file for writing!" << endl;
+        cerr << "\nCould not open file for writing!\n\n";
         return;
     }
 
@@ -102,6 +108,7 @@ void encodeFile(const string& inputFilename, const string& outputFilename, int m
         }
         outfile << line << endl; // Записуємо зсунутий рядок у вихідний файл
     }
+    retFlag = false;
 }
 
 // Функція для декодування символу зсувом вліво на m позицій
@@ -120,13 +127,13 @@ char decode(char s, int m) {
 void decodeFile(const string& inputFilename, const string& outputFilename, int m) {
     ifstream infile(inputFilename, ios::in); // Відкриваємо вхідний файл для читання
     if (!infile) {
-        cerr << "Could not open file for reading!" << endl;
+        cerr << "\nCould not open file for reading!\n\n";
         return;
     }
 
     ofstream outfile(outputFilename, ios::out); // Відкриваємо вихідний файл для запису
     if (!outfile) {
-        cerr << "Could not open file for writing!" << endl;
+        cerr << "\nCould not open file for writing!\n\n";
         return;
     }
 

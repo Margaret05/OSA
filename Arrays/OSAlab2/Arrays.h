@@ -15,3 +15,5 @@ void Task1();
 void Task2();
 
 void Task3();
+
+void nvjdk(std::string& inputFilename, int& m, std::string& encodedFilename, bool& retFlag);

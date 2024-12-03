@@ -17,9 +17,9 @@ int getValidSize(const string& prompt);
 void CreateArray(int size, int* array);
 // функція для виводу масиву
 void OutputArray(int size1, int* array1);
-// Функція для знаходження об'єднання двох масивів
+// Функція для знаходження об'єднання масивів
 void findUnion(int arr1[], int size1, int arr2[], int size2, int arr3[], int size3);
-// Функція для знаходження перетину двох масивів
+// Функція для знаходження перетину масивів
 void findIntersection(int arr1[], int size1, int arr2[], int size2, int arr3[], int size3);
 
 // завдання 2
@@ -38,7 +38,7 @@ void Task3();
 //void encodingLine();
 
 // Функція для кодування вмісту текстового файлу
-void encodeFile(const string& inputFilename, const string& outputFilename, int m);
+void encodeFile(string& inputFilename, int& m, string& encodedFilename, bool& retFlag);
 // Функція для декодування вмісту текстового файлу
 void decodeFile(const string& inputFilename, const string& outputFilename, int m);
 // Функція для кодування символу зсувом вправо на m позицій
