@@ -1,0 +1,3 @@
+﻿  Queue.cpp
+C:\Users\38068\source\repos\Stack and Queue\Queue.cpp(9,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Stack and Queue.vcxproj -> C:\Users\38068\source\repos\Stack and Queue\x64\Debug\Stack and Queue.exe
