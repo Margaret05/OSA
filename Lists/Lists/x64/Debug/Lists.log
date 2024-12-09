@@ -1,0 +1,3 @@
+﻿  Lists.cpp
+C:\Users\38068\source\repos\OSA\Lists\Lists.cpp(4,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Lists.vcxproj -> C:\Users\38068\source\repos\OSA\Lists\x64\Debug\Lists.exe
