@@ -1,0 +1,7 @@
+﻿A1234567 Candy 70
+A1234571 Marshmallow 47
+A1234568 Lolly-pop 5
+A1234570 Chocolad 17
+A1234569 Caramel 35
+A1234572 Marmalade 25
+A1234568 Lolly-pop 54
