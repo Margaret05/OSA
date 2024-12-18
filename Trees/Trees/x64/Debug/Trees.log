@@ -1,0 +1,4 @@
+﻿  Trees.cpp
+C:\Users\38068\source\repos\Trees\Trees.cpp(12,17): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\38068\source\repos\Trees\Trees.cpp(69,25): warning C4566: character represented by universal-character-name '\u200B' cannot be represented in the current code page (1252)
+  Trees.vcxproj -> C:\Users\38068\source\repos\Trees\x64\Debug\Trees.exe
